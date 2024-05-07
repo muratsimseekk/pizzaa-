@@ -11,7 +11,7 @@ export class FormdetailComponent {
     'Domates',
     'Biber',
     'Sosis',
-    'Misir',
+    'Mısır',
     'Sucuk',
     'Kanada Jambonu',
     'Salam',
@@ -19,8 +19,8 @@ export class FormdetailComponent {
     'Tavuk Izgara',
     'Jalepenos',
     'Kabak',
-    'Sogan',
-    'Sarimsak',
+    'Soğan',
+    'Sarımsak',
   ];
 
   constructor() {}
