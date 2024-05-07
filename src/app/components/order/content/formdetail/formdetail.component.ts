@@ -24,4 +24,8 @@ export class FormdetailComponent {
   ];
 
   constructor() {}
+
+  minusButton() {}
+
+  addButton() {}
 }
