@@ -5,25 +5,34 @@
         Boyut Sec <span class="text-kirmizi">* </span>
       </p>
       <div class="flex items-center">
-        <input type="radio" id="kucuk" name="boyut" /><label
-          class="mx-4"
-          for="kucuk"
-          >Küçük</label
-        >
+        <input
+          type="radio"
+          id="kucuk"
+          name="boyut"
+          [(ngModel)]="selectedSize"
+          value="kucuk"
+          (change)="getSelected()"
+        /><label class="mx-4" for="kucuk">Küçük</label>
       </div>
       <div class="flex items-center">
-        <input type="radio" id="orta" name="boyut" /><label
-          class="mx-4"
-          for="orta"
-          >Orta</label
-        >
+        <input
+          type="radio"
+          id="orta"
+          name="boyut"
+          value="orta"
+          [(ngModel)]="selectedSize"
+          (change)="getSelected()"
+        /><label class="mx-4" for="orta">Orta</label>
       </div>
       <div class="flex items-center">
-        <input type="radio" id="buyuk" name="boyut" /><label
-          class="mx-4"
-          for="buyuk"
-          >Büyük</label
-        >
+        <input
+          type="radio"
+          id="buyuk"
+          name="boyut"
+          [(ngModel)]="selectedSize"
+          (change)="getSelected()"
+          value="buyuk"
+        /><label class="mx-4" for="buyuk">Büyük</label>
       </div>
     </div>
     <div class="w-1/2 flex flex-col gap-3">
@@ -82,7 +91,7 @@
           </div>
           <div class="flex w-full justify-between text-kirmizi font-semibold">
             <p>Toplam</p>
-            <p>110.50₺</p>
+            <p>{{ basketTotal }}</p>
           </div>
         </div>
         <button type="button" class="bg-sari w-full py-3 rounded-md">

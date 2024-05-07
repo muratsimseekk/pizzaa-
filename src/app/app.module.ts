@@ -8,6 +8,7 @@ import { OrderComponent } from './components/order/order.component';
 import { HeaderComponent } from './components/order/header/header.component';
 import { ContentComponent } from './components/order/content/content.component';
 import { FormdetailComponent } from './components/order/content/formdetail/formdetail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,10 @@ import { FormdetailComponent } from './components/order/content/formdetail/formd
     OrderComponent,
     HeaderComponent,
     ContentComponent,
-    FormdetailComponent
+    FormdetailComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
