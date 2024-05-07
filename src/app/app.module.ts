@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { OrderComponent } from './components/order/order.component';
 import { HeaderComponent } from './components/order/header/header.component';
+import { ContentComponent } from './components/order/content/content.component';
+import { FormdetailComponent } from './components/order/content/formdetail/formdetail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     OrderComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContentComponent,
+    FormdetailComponent
   ],
   imports: [
     BrowserModule,

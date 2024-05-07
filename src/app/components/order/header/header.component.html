@@ -4,11 +4,26 @@
   >
     Teknolojik Yemekler
   </h1>
-  <div class="w-2/5 my-6">
+  <div class="w-2/5 my-6 font-quattrocento font-semibold text-white">
     <ul class="flex gap-3">
-      <li>Anasayfa -</li>
-      <li>Secenekler -</li>
-      <li>Siparis Olustur -</li>
+      <li>
+        <a
+          class="hover:opacity-100 active:opacity-100 opacity-85"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Anasayfa -</a
+        >
+      </li>
+      <li class="opacity-85 cursor-pointer hover:opacity-100">Secenekler -</li>
+      <li>
+        <a
+          class="hover:opacity-100 active:opacity-100 opacity-85"
+          routerLink="/pizza"
+          routerLinkActive="ac"
+          >Siparis Olustur -</a
+        >
+      </li>
     </ul>
   </div>
 </div>
