@@ -23,9 +23,19 @@ export class FormdetailComponent {
     'Sarımsak',
   ];
 
+  count: number = 1;
+
   constructor() {}
 
-  minusButton() {}
+  minusButton() {
+    if (this.count > 1) {
+      this.count--;
+    } else {
+      this.count = 1;
+    }
+  }
 
-  addButton() {}
+  addButton() {
+    this.count++;
+  }
 }
