@@ -37,7 +37,9 @@ export class FormdetailComponent {
 
   itemsArr: string[] = [];
 
-  constructor() {}
+  constructor() {
+    this.getBasketTotal();
+  }
 
   minusButton() {
     if (this.count > 1) {
