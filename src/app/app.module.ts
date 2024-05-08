@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/order/header/header.component';
 import { ContentComponent } from './components/order/content/content.component';
 import { FormdetailComponent } from './components/order/content/formdetail/formdetail.component';
 import { FormsModule } from '@angular/forms';
+import { HomeHeaderComponent } from './components/home/home-header/home-header.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ContentComponent,
     FormdetailComponent,
+    HomeHeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
