@@ -24,25 +24,25 @@ export class FormdetailComponent {
   ];
 
   count: number = 1;
+
   selectedSize: string = 'kucuk';
-
-  sizePrice: number = 85.5;
-  basketTotal: number = this.sizePrice;
-
-  doughPrice: number = 0;
-
   selectedDough: string = '';
 
-  itemsArr: string[] = [];
-
+  initialPrice: number = 85.5;
+  sizePrice: number = 0;
+  doughPrice: number = 0;
   itemPrice: number = 0;
+
+  basketTotal!: number;
+
+  itemsArr: string[] = [];
 
   constructor() {}
 
   minusButton() {
     if (this.count > 1) {
       this.count--;
-      this.basketTotal = this.count * this.sizePrice;
+      this.getBasketTotal();
     } else {
       this.count = 1;
     }
@@ -50,48 +50,48 @@ export class FormdetailComponent {
 
   addButton() {
     this.count++;
-    this.basketTotal = this.count * this.sizePrice;
+    this.getBasketTotal();
+  }
+
+  getBasketTotal() {
+    this.basketTotal =
+      (this.initialPrice + this.sizePrice + this.doughPrice + this.itemPrice) *
+      this.count;
   }
 
   getSelected() {
-    this.sizePrice = 85.5;
     switch (this.selectedSize) {
       case 'kucuk':
-        return (this.basketTotal = this.sizePrice);
-
+        this.sizePrice = 0;
+        break;
       case 'orta':
-        console.log('orta secildi');
-        this.sizePrice += 20;
-        return (this.basketTotal = this.sizePrice);
-
+        this.sizePrice = 10;
+        break;
       case 'buyuk':
-        console.log('buyuk secildi');
-        this.sizePrice += 35;
-        return (this.basketTotal = this.sizePrice);
+        this.sizePrice = 20;
+        break;
       default:
-        return this.sizePrice;
+        this.sizePrice = 0;
     }
+    this.getBasketTotal();
   }
 
   getDough() {
     this.doughPrice = this.sizePrice;
     switch (this.selectedDough) {
       case 'ince':
-        console.log('ince secildi');
-
-        return (this.basketTotal = this.doughPrice);
+        this.doughPrice = 0;
+        break;
       case 'peynirli':
-        console.log('peynirli secildi');
-        this.doughPrice += 20;
-        return (this.basketTotal = this.doughPrice);
+        this.doughPrice = 20;
+        break;
       case 'kalin':
-        console.log('kalin secildi');
-        this.doughPrice += 30;
-        return (this.basketTotal = this.doughPrice);
-
+        this.doughPrice = 30;
+        break;
       default:
-        return this.basketTotal;
+        this.doughPrice = 0;
     }
+    this.getBasketTotal();
   }
 
   addItems(item: string) {
@@ -100,12 +100,12 @@ export class FormdetailComponent {
     if (this.itemsArr.length < 10) {
       if (checkBox.checked) {
         this.itemsArr.push(item);
-        this.basketTotal += 5;
+        this.itemPrice += 5;
       } else {
         const index = this.itemsArr.indexOf(item);
         if (index !== -1) {
           this.itemsArr.splice(index, 1);
-          this.basketTotal -= 5;
+          this.itemPrice -= 5;
         }
       }
     } else {
@@ -113,7 +113,7 @@ export class FormdetailComponent {
         const index = this.itemsArr.indexOf(item);
         if (index !== -1) {
           this.itemsArr.splice(index, 1);
-          this.basketTotal -= 5;
+          this.itemPrice -= 5;
         }
       } else {
         checkBox.checked = false;
@@ -122,5 +122,6 @@ export class FormdetailComponent {
     }
 
     console.log(this.itemsArr);
+    this.getBasketTotal();
   }
 }
