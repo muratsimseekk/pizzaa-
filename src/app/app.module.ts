@@ -11,6 +11,7 @@ import { FormdetailComponent } from './components/order/content/formdetail/formd
 import { FormsModule } from '@angular/forms';
 import { HomeHeaderComponent } from './components/home/home-header/home-header.component';
 import { HomeContentComponent } from './components/home/home-content/home-content.component';
+import { FooterComponent } from './components/home/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HomeContentComponent } from './components/home/home-content/home-conten
     FormdetailComponent,
     HomeHeaderComponent,
     HomeContentComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
